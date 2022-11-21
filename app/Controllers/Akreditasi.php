@@ -125,7 +125,7 @@ class Akreditasi extends BaseController
             return redirect()->to($this->googleClient->createAuthUrl());
         } else {
             session()->setFlashdata('validasi', ['Tidak berhasil menuju OAuth Page']);
-            return redirect()->to(base_url('akreditasi'));
+            return redirect()->to(base_url('akreditasi/index'));
         }
     }
 
@@ -181,7 +181,7 @@ class Akreditasi extends BaseController
                 $fileId = $return['id'];
             } catch (\Exception $e) {
                 session()->setFlashdata('validasi', [$e->getMessage()]);
-                return redirect()->to(base_url('akreditasi'));
+                return redirect()->to(base_url('akreditasi/index'));
             }
 
             $newPermission = new \Google_Service_Drive_Permission();
@@ -197,7 +197,7 @@ class Akreditasi extends BaseController
                     db_connect()->table('link_apm')->where('id', session()->get('id'))->update(['id_dok' => $fileId, 'link' => $file_update->getWebViewLink()]);
                     $this->client->request('POST', 'http://localhost/akreditasi/public/apiakreditasi', ['form_params' => ['nomor_apm' => $nomor_apm, 'nomor_sub_apm' => $nomor_sub_apm, 'semester' => $semester, 'tahun' => $tahun, 'id_dok' => $fileId, 'link' => $file_update->getWebViewLink(), 'nama_file' => $file_name]]);
                     session()->setFlashdata('success', 'Berhasil update file');
-                    return redirect()->to(base_url('akreditasi'));
+                    return redirect()->to(base_url('akreditasi/index'));
                 } else {
                     db_connect()->table('link_apm')->insert(['area' => $area, 'nomor_apm' => $nomor_apm, 'nomor_sub_apm' => $nomor_sub_apm, 'semester' => $semester, 'tahun' => $tahun, 'id_dok' => $fileId, 'link' => $file_update->getWebViewLink(), 'nama_file' => $file_name]);
                     unlink(ROOTPATH . 'public/temp_file/' . $file_name);
