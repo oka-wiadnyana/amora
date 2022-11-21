@@ -203,11 +203,11 @@ class Akreditasi extends BaseController
                     unlink(ROOTPATH . 'public/temp_file/' . $file_name);
                     $this->client->request('POST', 'http://localhost/akreditasi/public/apiakreditasi', ['form_params' => ['area' => $area, 'nomor_apm' => $nomor_apm, 'nomor_sub_apm' => $nomor_sub_apm, 'semester' => $semester, 'tahun' => $tahun, 'id_dok' => $fileId, 'link' => $file_update->getWebViewLink(), 'nama_file' => $file_name]]);
                     session()->setFlashdata('success', 'Berhasil upload file');
-                    return redirect()->to(base_url('akreditasi'));
+                    return redirect()->to(base_url('akreditasi/index'));
                 }
             } catch (\Exception $e) {
                 session()->setFlashdata('validasi', [$e->getMessage()]);
-                return redirect()->to(base_url('akreditasi'));
+                return redirect()->to(base_url('akreditasi/index'));
             }
         }
     }

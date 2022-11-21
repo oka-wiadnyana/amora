@@ -143,7 +143,7 @@
                 <td class="text-wrap">${element.uraian}</td>
                 <td>${element.area_zi}</td>
                 <td>${element.bobot}</td>
-                <td><a href="" class="btn btn-primary btn-link" data-nomor="${element.nomor}">Link</a> <a href="" class="btn btn-info btn-tambah ${disable_button}" data-id="${element.id}">Tambah</a></td>
+                <td><a href="" class="btn btn-primary btn-link" data-nomor="${element.nomor}">Link</a> <a href="" class="btn btn-info btn-tambah " data-id="${element.id}">Tambah</a></td>
               </tr>
     `
               )
