@@ -1720,8 +1720,8 @@
                     <button class="btn btn-link btn-block text-left p-0 m-0" type="button" data-toggle="collapse" data-target="<?= (count($data_kesesuaian['data_bht'])) ? "#dataBht" : ""; ?>" aria-expanded="true" aria-controls="dataBht" style="text-decoration: none">
                         <div class="col-md-10 d-flex flex-column">
 
-                            <span>Publikasi Pihak <span class="badge badge-danger"><?= (count($data_kesesuaian['data_bht'])) ?: ""; ?></span></span>
-                            <span class="font-italic font-weight-light">Kesesuaian Publikasi Perkara </span>
+                            <span>Pengisian BHT <span class="badge badge-danger"><?= (count($data_kesesuaian['data_bht'])) ?: ""; ?></span></span>
+                            <span class="font-italic font-weight-light">Ada Atau Tidaknya Pencatatan BHT pada suatu perkara </span>
                         </div>
 
                     </button>
