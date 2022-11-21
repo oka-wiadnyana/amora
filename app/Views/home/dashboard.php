@@ -246,7 +246,7 @@
 
             $.ajax({
                 type: "get",
-                url: "http://localhost:3000/getdataeis",
+                url: "http://<?= $_SERVER['HTTP_HOST']; ?>:3000/getdataeis",
 
                 dataType: "json",
                 beforeSend: function() {
