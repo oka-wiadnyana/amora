@@ -40,7 +40,7 @@
 #--------------------------------------------------------------------
 
 database.default.hostname = localhost
-database.default.database = e_monev
+database.default.database = amora
 database.default.username = root
 database.default.password = 
 database.default.DBDriver = MySQLi
