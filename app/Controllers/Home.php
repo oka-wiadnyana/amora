@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\HTTP\Message;
+
 class Home extends BaseController
 {
     public function index()
@@ -11,6 +13,7 @@ class Home extends BaseController
         $data_total_eksekusi_ht = db_connect('sipp')->table('perkara_eksekusi_ht')->countAllResults();
         $data_eksekusi_ht_selesai = db_connect('sipp')->table('perkara_eksekusi_ht')->groupStart()->where('pelaksanaan_eksekusi_lelang !=', null)->where('pelaksanaan_eksekusi_lelang !=', '0000-00-00')->groupEnd()->orGroupStart()->where('pelaksanaan_eksekusi_rill !=', null)->where('pelaksanaan_eksekusi_rill !=', '0000-00-00')->groupEnd()->orGroupStart()->where('penetapan_noneksekusi !=', null)->where('penetapan_noneksekusi !=', '0000-00-00')->groupEnd()->orGroupStart()->where('tanggal_cabut_ht !=', null)->where('tanggal_cabut_ht !=', '0000-00-00')->groupEnd()->countAllResults();
         // dd($data_eksekusi_putusan_selesai);
+        $message = new Message();
 
 
         $data = [
@@ -18,6 +21,7 @@ class Home extends BaseController
             'total_eks_putusan_selesai' => $data_eksekusi_putusan_selesai,
             'total_eks_ht' => $data_total_eksekusi_ht,
             'total_eks_ht_selesai' => $data_eksekusi_ht_selesai,
+            'host' => $message->headers()['Host']->getValue()
 
         ];
         return view('home/dashboard', $data);
