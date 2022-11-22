@@ -26,7 +26,7 @@
               <th style="border-top: 1px solid grey;"> Semester </th>
               <th style="border-top: 1px solid grey;"> Tahun </th>
               <th style="border-top: 1px solid grey;"> Link </th>
-              <th style="border-top: 1px solid grey;"> Aksi </th>
+              <!-- <th style="border-top: 1px solid grey;"> Aksi </th> -->
             </tr>
           </thead>
           <tbody class="">
@@ -37,7 +37,7 @@
                 <td><?= $d['semester']; ?></td>
                 <td><?= $d['tahun']; ?></td>
                 <td><a href="<?= $d['link']; ?>" class="btn btn-secondary <?= !$d['link'] ? 'disabled' : ''; ?>" target="_blank">Link</a></td>
-                <td><a href="<?= base_url('akreditasi/hapus_eksternal/' . $d['id']); ?>" data-id="<?= $d['id']; ?>" class="btn btn-danger">Hapus</a></td>
+
               </tr>
             <?php endforeach; ?>
           </tbody>

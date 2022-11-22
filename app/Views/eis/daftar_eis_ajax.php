@@ -1237,7 +1237,7 @@
                     <button class="btn btn-link btn-block text-left p-0 m-0" type="button" data-toggle="collapse" data-target="" aria-expanded="true" aria-controls="penginputanPenahanan" style="text-decoration: none">
                         <div class="col-md-10 d-flex flex-column">
 
-                            <span>Unggah Putusan Akhir <span class="badge badge-danger"><?= (count($data_kepatuhan['penginputan_penahanan'])) ?: ""; ?></span></span>
+                            <span>Unggah Putusan Akhir</span>
                             <span class="font-italic font-weight-light">(On Progress) </span>
                         </div>
 
