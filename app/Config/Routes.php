@@ -171,6 +171,13 @@ $routes->group('auth', static function ($routes) {
     $routes->post('attempt_login', [Auth::class, 'attempt_login']);
     $routes->get('logout', [Auth::class, 'logout']);
 });
+
+$routes->post('apiakreditasi/create_internal', 'Apiakreditasi::create_internal');
+$routes->post('apiakreditasi/delete_file', 'Apiakreditasi::delete_file');
+$routes->post('apiakreditasi/create_eksternal', 'Apiakreditasi::create_eksternal');
+$routes->post('apiakreditasi/insert_checklist', 'Apiakreditasi::insert_checklist');
+
+$routes->resource('apiakreditasi');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
