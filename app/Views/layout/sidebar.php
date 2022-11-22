@@ -94,9 +94,7 @@
                 <div class="collapse" id="setting">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="<?= base_url('pengaturan/bagian'); ?>">Bagian</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?= base_url('pengaturan/daftar_google_client'); ?>">Google Client</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?= base_url('pengaturan/parent_folder'); ?>">Parent Folder</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?= base_url('pengaturan/redirect_uri'); ?>">Redirect URI</a></li>
+
                         <li class="nav-item"> <a class="nav-link" href="<?= base_url('pengaturan/daftar_akun'); ?>">Akun</a></li>
                         <!-- <li class="nav-item"> <a class="nav-link" href="<?= base_url('eksekusi/putusan_belum_selesai'); ?>">Belum selesai</a></li> -->
 
