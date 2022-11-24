@@ -37,7 +37,7 @@
                         <label for="password">Konfirmasi Password</label>
                         <input type="password" name="password2" class="form-control" placeholder="Konfirmasi password" value="">
                     </div>
-                    <input type="hidden" name="id" value="<?= ($data_akun) ? $data_akun['id'] : ""; ?>">
+                    <input type="hidden" name="id" value="<?= ($data_akun) ? $data_akun['id_akun'] : ""; ?>">
                     <input type="hidden" name="password_lama" value="<?= ($data_akun) ? $data_akun['password'] : ""; ?>">
                     <input type="hidden" name="username_lama" value="<?= ($data_akun) ? $data_akun['username'] : ""; ?>">
 

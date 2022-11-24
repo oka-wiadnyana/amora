@@ -217,7 +217,7 @@ class Akreditasi extends BaseController
         $nomor_apm = $this->request->getVar('nomor');
         $semester = $this->request->getVar('semester');
         $tahun = $this->request->getVar('tahun');
-        $data_apm = db_connect()->table('link_apm')->where('nomor_apm', $nomor_apm)->where('semester', $semester)->where('tahun', $tahun)->get()->getResultArray();
+        $data_apm = db_connect()->table('link_apm')->where('nomor_apm', $nomor_apm)->where('semester', $semester)->where('tahun', $tahun)->orderBy('nomor_sub_apm')->get()->getResultArray();
         return $this->response->setJSON([view('akreditasi/modal_link', ['data' => $data_apm])]);
     }
 

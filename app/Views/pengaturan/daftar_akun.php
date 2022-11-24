@@ -149,14 +149,14 @@
             if (result.isConfirmed) {
               $.ajax({
                 type: "post",
-                url: "<?= base_url('pengaturan/hapus_bagian'); ?>",
+                url: "<?= base_url('pengaturan/hapus_akun'); ?>",
                 data: {
                   id
                 },
                 dataType: "json",
                 success: function(response) {
 
-                  $(location).attr('href', `<?= base_url('pengaturan/bagian'); ?>`);
+                  $(location).attr('href', `<?= base_url('pengaturan/daftar_akun'); ?>`);
                 }
               });
             }

@@ -132,6 +132,7 @@ $routes->group('pengaturan/', static function ($routes) {
     $routes->post('modal_akun', [Pengaturan::class, 'modal_akun']);
     $routes->post('insert_akun', [Pengaturan::class, 'insert_akun']);
     $routes->post('insert_akun/(:any)', [Pengaturan::class, 'insert_akun']);
+    $routes->post('hapus_akun', [Pengaturan::class, 'hapus_akun']);
 });
 
 $routes->group('home', static function ($routes) {

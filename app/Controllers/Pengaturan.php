@@ -322,7 +322,7 @@ class Pengaturan extends BaseController
     public function modal_akun()
     {
         $id = $this->request->getVar('id');
-        $data_akun = db_connect()->table('akun')->join('bagian', 'akun.id_level=bagian.id', 'left')->where('akun.id', $id)->get()->getRowArray();
+        $data_akun = db_connect()->table('akun')->select('akun.id as id_akun, akun.*, bagian.*')->join('bagian', 'akun.id_level=bagian.id', 'left')->where('akun.id', $id)->get()->getRowArray();
         $data_bagian = db_connect()->table('bagian')->get()->getResultArray();
         return $this->response->setJSON([view('pengaturan/modal_akun', ['data_akun' => $data_akun, 'bagian' => $data_bagian])]);
     }
@@ -403,8 +403,9 @@ class Pengaturan extends BaseController
                 $password_hash = password_hash($password, PASSWORD_DEFAULT);
                 $password_update = ['password' => $password_hash];
             }
+
             if (db_connect()->table('akun')->where('id', $id)->update(array_merge(['nama' => $nama, 'id_level' => $level, 'username' => $username], $password_update))) {
-                session()->setFlashdata('success', 'Nama bagian berhasil diubah');
+                session()->setFlashdata('success', 'Akun berhasil diubah');
                 return redirect()->to('pengaturan/daftar_akun');
             } else {
                 session()->setFlashdata('validasi', ['Akun gagal diubah']);
@@ -419,6 +420,18 @@ class Pengaturan extends BaseController
                 session()->setFlashdata('validasi', ['Nama bagian gagal dimasukkan']);
                 return redirect()->to('pengaturan/daftar_akun');
             }
+        }
+    }
+
+    public function hapus_akun()
+    {
+        $id = $this->request->getVar('id');
+        if (db_connect()->table('akun')->where('id', $id)->delete()) {
+            session()->setFlashdata('success', 'Data berhasil dihapus');
+            return $this->response->setJSON(['msg' => 'success']);
+        } else {
+            session()->setFlashdata('validasi', ['Data gagal dihapus']);
+            return $this->response->setJSON(['msg' => 'fail']);
         }
     }
 }
