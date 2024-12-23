@@ -94,7 +94,7 @@
                     <?php foreach (session()->get('daftar_sub_unit') as $sub_unit) : ?>
                         <li class="nav-item"> <a class="nav-link text-wrap" href="<?= base_url('hawasbid/data_laporan/' . $sub_unit['level']); ?>"><?= $sub_unit['nama_bagian']; ?></a></li>
                     <?php endforeach; ?>
-                    <li class="nav-item"> <a class="nav-link text-wrap" href="<?= base_url('hawasbid/data_laporan/ptsp') ?>">PTSP</a></li>
+                    <!-- <li class="nav-item"> <a class="nav-link text-wrap" href="<?= base_url('hawasbid/data_laporan/ptsp') ?>">PTSP</a></li> -->
 
                 </ul>
             </div>
@@ -194,6 +194,18 @@
 
                 </ul>
             </div>
+            <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('ptsp/data_korwasbid'); ?>">
+                <span class="icon-bg"><i class="mdi mdi-code-equal menu-icon"></i></span>
+                <span class="menu-title">Korwasbid</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('ptsp/data_pengawas'); ?>">
+                <span class="icon-bg"><i class="mdi mdi-code-equal menu-icon"></i></span>
+                <span class="menu-title">Pengawas</span>
+            </a>
+        </li>
 
         </li>
         <li class="nav-item nav-category">Zona Integritas</li>
@@ -391,7 +403,7 @@
                 <span class="menu-title">Doc Private</span>
             </a>
         </li>
-        <li class="nav-item nav-category">SHANTI CARE</li>
+        <!-- <li class="nav-item nav-category">SHANTI CARE</li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#shanti_care" aria-expanded="false" aria-controls="shanti_care">
                 <span class="icon-bg"><i class="mdi mdi-air-filter menu-icon"></i></span>
@@ -419,9 +431,9 @@
 
                 </ul>
             </div>
-        </li>
+        </li> -->
 
-        <li class="nav-item nav-category">SP REVIEW</li>
+        <!-- <li class="nav-item nav-category">SP REVIEW</li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#sp_review" aria-expanded="false" aria-controls="sp_review">
                 <span class="icon-bg"><i class="mdi mdi-air-filter menu-icon"></i></span>
@@ -443,15 +455,15 @@
                 </ul>
             </div>
 
-        </li>
-        <li class="nav-item nav-category">SBK</li>
+        </li> -->
+        <!-- <li class="nav-item nav-category">SBK</li>
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('sbk'); ?>">
                 <span class="icon-bg mdi mdi-file-check text-success h5"></span></span>
                 <span class="menu-title">Hasil SBK</span>
             </a>
-        </li>
-        <?php if (session()->get('level') == "administrator" || session()->get('level') == "ketua" || session()->get('level') == "wakil" || session()->get('level') == "panitera") : ?>
+        </li> -->
+        <!-- <?php if (session()->get('level') == "administrator" || session()->get('level') == "ketua" || session()->get('level') == "wakil" || session()->get('level') == "panitera") : ?>
             <li class="nav-item nav-category">Pembagian Perkara</li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#panitera" aria-expanded="false" aria-controls="panitera">
@@ -482,7 +494,7 @@
                     </ul>
                 </div>
             </li>
-        <?php endif; ?>
+        <?php endif; ?> -->
         <?php if (session()->get('level') == "administrator" || session()->get('level') == "ketua" || session()->get('level') == "wakil" || session()->get('level') == "sekretaris" || session()->get('level') == "panitera") : ?>
             <li class="nav-item nav-category">Admin</li>
             <li class="nav-item">

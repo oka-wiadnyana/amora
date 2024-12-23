@@ -283,6 +283,20 @@ $routes->group('ptsp', static function ($routes) {
     $routes->post('insert_laporan', [Ptsp::class, 'insert_laporan']);
     $routes->post('insert_laporan/(:any)', [Ptsp::class, 'insert_laporan']);
     $routes->post('hapus_laporan', [Ptsp::class, 'hapus_laporan']);
+    $routes->get('data_korwasbid', [Ptsp::class, 'data_korwasbid']);
+    $routes->post('data_korwasbid_datatable', [Ptsp::class, 'data_korwasbid_datatable']);
+    $routes->get('modal_korwasbid', [Ptsp::class, 'modal_korwasbid']);
+    $routes->post('modal_korwasbid', [Ptsp::class, 'modal_korwasbid']);
+    $routes->post('insert_korwasbid', [Ptsp::class, 'insert_korwasbid']);
+    $routes->post('insert_korwasbid/(:any)', [Ptsp::class, 'insert_korwasbid']);
+    $routes->post('hapus_korwasbid', [Ptsp::class, 'hapus_korwasbid']);
+    $routes->get('data_pengawas', [Ptsp::class, 'data_pengawas']);
+    $routes->post('data_pengawas_datatable', [Ptsp::class, 'data_pengawas_datatable']);
+    $routes->get('modal_pengawas', [Ptsp::class, 'modal_pengawas']);
+    $routes->post('modal_pengawas', [Ptsp::class, 'modal_pengawas']);
+    $routes->post('insert_pengawas', [Ptsp::class, 'insert_pengawas']);
+    $routes->post('insert_pengawas/(:any)', [Ptsp::class, 'insert_pengawas']);
+    $routes->post('hapus_pengawas', [Ptsp::class, 'hapus_pengawas']);
 
     // $routes->get('logout', [Panitera::class, 'logout']);
 });

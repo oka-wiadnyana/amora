@@ -5,7 +5,7 @@
     <div class="col">
       <span class="h3">
 
-        PTSP <?= ucwords($level); ?>
+        PENGAWAS PTSP
       </span>
     </div>
   </div>
@@ -75,7 +75,7 @@
         "serverSide": true,
         "order": [],
         "ajax": {
-          "url": `<?= base_url('ptsp/data_ptsp_datatable/' . $level); ?>/${jenis_laporan}`,
+          "url": `<?= base_url('ptsp/data_pengawas_datatable/'); ?>`,
           "type": "POST"
         },
         "columnDefs": [{
@@ -113,7 +113,7 @@
       })
 
     }
-    table_ptsp('monev');
+    table_ptsp();
 
     $('.button_jenis_ptsp').click(function(e) {
       e.preventDefault();
@@ -127,12 +127,12 @@
       e.preventDefault();
       $.ajax({
         type: "get",
-        url: "<?= base_url('ptsp/modal_laporan/' . $level); ?>",
+        url: "<?= base_url('ptsp/modal_pengawas/'); ?>",
 
         dataType: "json",
         success: function(response) {
           $('#modal').html(response);
-          $('#modal_laporan').modal('show');
+          $('#modal_pengawas').modal('show');
         }
       });
     })
@@ -141,7 +141,7 @@
       let id = $(this).data('id');
       $.ajax({
         type: "post",
-        url: "<?= base_url('ptsp/modal_laporan/' . $level); ?>",
+        url: "<?= base_url('ptsp/modal_pengawas/'); ?>",
         data: {
           id
         },
@@ -149,7 +149,7 @@
         success: function(response) {
           console.log(response)
           $('#modal').html(response);
-          $('#modal_laporan').modal('show');
+          $('#modal_pengawas').modal('show');
         }
       });
     })
@@ -172,14 +172,14 @@
         if (result.isConfirmed) {
           $.ajax({
             type: "post",
-            url: "<?= base_url('ptsp/hapus_laporan'); ?>",
+            url: "<?= base_url('ptsp/hapus_pengawas'); ?>",
             data: {
               id
             },
             dataType: "json",
             success: function(response) {
 
-              $(location).attr('href', `<?= base_url('ptsp/data_laporan/' . $level); ?>`);
+              $(location).attr('href', `<?= base_url('ptsp/data_pengawas/'); ?>`);
             }
           });
         }

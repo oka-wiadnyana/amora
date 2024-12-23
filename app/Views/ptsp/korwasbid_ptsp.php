@@ -5,7 +5,7 @@
     <div class="col">
       <span class="h3">
 
-        PTSP <?= ucwords($level); ?>
+        KORWASBID PTSP
       </span>
     </div>
   </div>
@@ -16,8 +16,8 @@
   </div>
   <nav class="mt-2">
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <!-- <button class="nav-link active button_jenis_ptsp" id="nav-laporan-tab" data-toggle="tab" data-target="#nav-laporan" type="button" role="tab" aria-controls="nav-laporan" aria-selected="true" data-jenis='laporan'>Laporan</button> -->
-      <button class="nav-link active button_jenis_ptsp" id="nav-monev-tab" data-toggle="tab" data-target="#nav-monev" type="button" role="tab" aria-controls="nav-monev" aria-selected="true" data-jenis='monev'>Monev</button>
+      <button class="nav-link active button_jenis_ptsp" id="nav-laporan-tab" data-toggle="tab" data-target="#nav-laporan" type="button" role="tab" aria-controls="nav-laporan" aria-selected="true" data-jenis='laporan'>Laporan</button>
+      <!-- <button class="nav-link active button_jenis_ptsp" id="nav-monev-tab" data-toggle="tab" data-target="#nav-monev" type="button" role="tab" aria-controls="nav-monev" aria-selected="true" data-jenis='monev'>Monev</button> -->
       <!-- <button class="nav-link button_jenis_ptsp" id="nav-tindak_lanjut-tab" data-toggle="tab" data-target="#nav-tindak_lanjut" type="button" role="tab" aria-controls="nav-tindak_lanjut" aria-selected="false" data-jenis='tindak_lanjut'>TL</button> -->
 
     </div>
@@ -75,7 +75,7 @@
         "serverSide": true,
         "order": [],
         "ajax": {
-          "url": `<?= base_url('ptsp/data_ptsp_datatable/' . $level); ?>/${jenis_laporan}`,
+          "url": `<?= base_url('ptsp/data_korwasbid_datatable/'); ?>`,
           "type": "POST"
         },
         "columnDefs": [{
@@ -113,7 +113,7 @@
       })
 
     }
-    table_ptsp('monev');
+    table_ptsp();
 
     $('.button_jenis_ptsp').click(function(e) {
       e.preventDefault();
@@ -127,12 +127,12 @@
       e.preventDefault();
       $.ajax({
         type: "get",
-        url: "<?= base_url('ptsp/modal_laporan/' . $level); ?>",
+        url: "<?= base_url('ptsp/modal_korwasbid/'); ?>",
 
         dataType: "json",
         success: function(response) {
           $('#modal').html(response);
-          $('#modal_laporan').modal('show');
+          $('#modal_korwasbid').modal('show');
         }
       });
     })
@@ -141,7 +141,7 @@
       let id = $(this).data('id');
       $.ajax({
         type: "post",
-        url: "<?= base_url('ptsp/modal_laporan/' . $level); ?>",
+        url: "<?= base_url('ptsp/modal_korwasbid/'); ?>",
         data: {
           id
         },
@@ -149,7 +149,7 @@
         success: function(response) {
           console.log(response)
           $('#modal').html(response);
-          $('#modal_laporan').modal('show');
+          $('#modal_korwasbid').modal('show');
         }
       });
     })
@@ -172,14 +172,14 @@
         if (result.isConfirmed) {
           $.ajax({
             type: "post",
-            url: "<?= base_url('ptsp/hapus_laporan'); ?>",
+            url: "<?= base_url('ptsp/hapus_korwasbid'); ?>",
             data: {
               id
             },
             dataType: "json",
             success: function(response) {
 
-              $(location).attr('href', `<?= base_url('ptsp/data_laporan/' . $level); ?>`);
+              $(location).attr('href', `<?= base_url('ptsp/data_korwasbid/'); ?>`);
             }
           });
         }
