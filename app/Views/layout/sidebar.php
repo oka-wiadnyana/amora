@@ -36,7 +36,7 @@
                 </ul>
             </div>
         </li>
-        <li class="nav-item nav-category">Monev SIPP</li>
+        <!-- <li class="nav-item nav-category">Monev SIPP</li>
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('mis'); ?>">
                 <span class="icon-bg"><i class="mdi mdi-ballot menu-icon"></i></span>
@@ -48,7 +48,7 @@
                 <span class="icon-bg"><i class="mdi mdi-code-equal menu-icon"></i></span>
                 <span class="menu-title">EIS</span>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item nav-category">Akreditasi</li>
         <li class="nav-item">
             <!-- <a class="nav-link" data-toggle="collapse" href="#apm" aria-expanded="false" aria-controls="apm">
@@ -194,7 +194,7 @@
 
                 </ul>
             </div>
-            <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link" href="<?= base_url('ptsp/data_korwasbid'); ?>">
                 <span class="icon-bg"><i class="mdi mdi-code-equal menu-icon"></i></span>
                 <span class="menu-title">Korwasbid</span>
@@ -512,9 +512,23 @@
                         <li class="nav-item"> <a class="nav-link" href="<?= base_url('pengaturan/parent_folder'); ?>">Parent Folder</a></li>
                         <li class="nav-item"> <a class="nav-link" href="<?= base_url('pengaturan/redirect_uri'); ?>">Redirect URI</a></li> -->
                         <!-- <li class="nav-item"> <a class="nav-link" href="<?= base_url('eksekusi/putusan_belum_selesai'); ?>">Belum selesai</a></li> -->
+                        <a class="nav-link" data-toggle="collapse" href="#ref_monev" aria-expanded="false" aria-controls="ref_monev">
+                            <span class="icon-bg"><i class="mdi mdi-arrow-right menu-icon"></i></span>
+                            <span class="menu-title">Ref Monev Bagian</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ref_monev">
+                            <ul class="nav flex-column sub-menu">
+                                <?php foreach (session()->get('daftar_sub_unit') as $sub_unit) : ?>
+                                    <li class="nav-item"> <a class="nav-link text-wrap" href="<?= base_url('pengaturan/daftar_monev/' . $sub_unit['level']); ?>"><?= $sub_unit['nama_bagian']; ?></a></li>
+                                <?php endforeach; ?>
 
+
+                            </ul>
+                        </div>
                     </ul>
                 </div>
+
             </li>
         <?php endif; ?>
 

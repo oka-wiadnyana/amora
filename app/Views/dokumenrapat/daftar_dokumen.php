@@ -17,7 +17,7 @@
   <nav class="mt-2">
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
       <button class="nav-link active button_jenis_dokumen" id="nav-laporan-tab" data-toggle="tab" data-target="#nav-laporan" type="button" role="tab" aria-controls="nav-laporan" aria-selected="true" data-jenis='rapat_bulanan'>Rapat Bulanan</button>
-      <button class="nav-link button_jenis_dokumen" id="nav-monev-tab" data-toggle="tab" data-target="#nav-monev" type="button" role="tab" aria-controls="nav-monev" aria-selected="false" data-jenis='monev_tl'>Monev Kinerja</button>
+      <!-- <button class="nav-link button_jenis_dokumen" id="nav-monev-tab" data-toggle="tab" data-target="#nav-monev" type="button" role="tab" aria-controls="nav-monev" aria-selected="false" data-jenis='monev_tl'>Monev Kinerja</button> -->
       <button class="nav-link button_jenis_dokumen" id="nav-monev-tab" data-toggle="tab" data-target="#nav-monev" type="button" role="tab" aria-controls="nav-monev" aria-selected="false" data-jenis='pimpinan'>Pimpinan</button>
       <button class="nav-link button_jenis_dokumen" id="nav-monev-tab" data-toggle="tab" data-target="#nav-monev" type="button" role="tab" aria-controls="nav-monev" aria-selected="false" data-jenis='hakim'>Hakim</button>
       <button class="nav-link button_jenis_dokumen" id="nav-tindak_lanjut-tab" data-toggle="tab" data-target="#nav-tindak_lanjut" type="button" role="tab" aria-controls="nav-tindak_lanjut" aria-selected="false" data-jenis='panitera'>Panitera</button>

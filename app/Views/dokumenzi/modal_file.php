@@ -40,6 +40,11 @@
     </div>
 </div>
 <script>
+    <?php
+    $segments = current_url(true)->getSegments();
+    $lastSegment = end($segments); // Ambil segmen terakhir
+    ?>
+
     function table_area() {
 
         table = $('#table-reform').DataTable({
@@ -172,7 +177,7 @@
                     dataType: "json",
                     success: function(response) {
 
-                        $(location).attr('href', '<?= base_url('dokumenzi/data_area/' . current_url(true)->getSegment(6)); ?>');
+                        $(location).attr('href', '<?= base_url('dokumenzi/data_area/' . $lastSegment); ?>');
                     }
                 });
             }

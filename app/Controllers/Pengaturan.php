@@ -537,4 +537,12 @@ class Pengaturan extends BaseController
             }
         }
     }
+
+    public function ref_monev_bagian($level = null)
+    {
+
+        $data_bagian = db_connect()->table('referensi_monev_bagian')->where('bagian', $level)->get()->getResultArray();
+
+        return view('pengaturan/ref_monev_bagian', ['data_bagian' => $data_bagian, 'bagian' => $level]);
+    }
 }
