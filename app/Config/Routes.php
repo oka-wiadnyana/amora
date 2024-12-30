@@ -199,6 +199,7 @@ $routes->group('pengaturan/', static function ($routes) {
     $routes->post('modal_jabatan', [Pengaturan::class, 'modal_jabatan']);
     $routes->post('insert_hakim/(:any)', [Pengaturan::class, 'insert_hakim']);
     $routes->get('daftar_monev/(:any)', [Pengaturan::class, 'ref_monev_bagian']);
+    $routes->get('modal_ref_monev/(:any)', [Pengaturan::class, 'modal_ref_monev']);
 });
 
 $routes->group('home', static function ($routes) {

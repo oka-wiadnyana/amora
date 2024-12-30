@@ -14,7 +14,7 @@
         <div class="row mb-2">
           <div class="col">
 
-            <a href="" class="btn btn-info tambah-akun">Tambah</a>
+            <a href="" class="btn btn-info tambah-ref-monev">Tambah</a>
           </div>
         </div>
 
@@ -94,16 +94,16 @@
       }
       table_akun();
 
-      $('.tambah-akun').click(function(e) {
+      $('.tambah-ref-monev').click(function(e) {
         e.preventDefault();
         $.ajax({
           type: "get",
-          url: "<?= base_url('pengaturan/modal_akun'); ?>",
+          url: "<?= base_url('pengaturan/modal_ref_monev/'.$bagian); ?>",
 
           dataType: "json",
           success: function(response) {
             $('#modal').html(response);
-            $('#modal_akun').modal('show');
+            $('#modal_ref_monev').modal('show');
           }
         });
       })

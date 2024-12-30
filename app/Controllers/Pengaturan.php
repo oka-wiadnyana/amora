@@ -545,4 +545,10 @@ class Pengaturan extends BaseController
 
         return view('pengaturan/ref_monev_bagian', ['data_bagian' => $data_bagian, 'bagian' => $level]);
     }
+
+    public function modal_ref_monev($bagian)
+    {
+       $data_ref_monev= db_connect()->table('referensi_monev_bagian')->where('bagian', $bagian)->get()->getResultArray();
+        return $this->response->setJSON([view('pengaturan/modal_ref_monev', ['bagian' => $bagian, 'data_ref_monev' => $data_ref_monev])]);
+    }
 }
