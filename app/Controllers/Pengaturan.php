@@ -546,9 +546,55 @@ class Pengaturan extends BaseController
         return view('pengaturan/ref_monev_bagian', ['data_bagian' => $data_bagian, 'bagian' => $level]);
     }
 
-    public function modal_ref_monev($bagian)
+    public function modal_ref_monev($bagian = null, $id = null)
     {
-       $data_ref_monev= db_connect()->table('referensi_monev_bagian')->where('bagian', $bagian)->get()->getResultArray();
+        
+       $data_ref_monev= db_connect()->table('referensi_monev_bagian')->where('id', $id)->get()->getRowArray();
+       
         return $this->response->setJSON([view('pengaturan/modal_ref_monev', ['bagian' => $bagian, 'data_ref_monev' => $data_ref_monev])]);
+    }
+
+    public function insert_ref_monev($ubah = null)
+    {
+        
+        $bagian = $this->request->getVar('bagian');
+        $id = $this->request->getVar('id');
+       
+       
+        if (!$this->validate([
+            'jenis_monev' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama  harus diisi'
+                ]
+            ]
+            
+        ])) {
+            session()->setFlashdata('validasi', $this->validation->getErrors());
+            return redirect()->to('pengaturan/daftar_monev/'.$bagian);
+        }
+
+        $jenis_monev = $this->request->getVar('jenis_monev');
+
+
+        if ($ubah == 'ubah') {
+          
+            if (db_connect()->table('referensi_monev_bagian')->where('id', $id)->update(['jenis_monev' => $jenis_monev])) {
+                session()->setFlashdata('success', 'Jenis Monev berhasil diubah');
+                return redirect()->to('pengaturan/daftar_monev/'.$bagian);
+            } else {
+                session()->setFlashdata('validasi', ['Jenis Monev diubah']);
+                return redirect()->to('pengaturan/daftar_monev/'.$bagian);
+            }
+        } else {
+          
+            if (db_connect()->table('referensi_monev_bagian')->insert(['jenis_monev' => $jenis_monev, 'bagian' => $bagian])) {
+                session()->setFlashdata('success', 'Jenis Monev berhasil dimasukkan');
+                return redirect()->to('pengaturan/daftar_monev/'.$bagian);
+            } else {
+                session()->setFlashdata('validasi', ['Jenis Monev bagian gagal dimasukkan']);
+                return redirect()->to('pengaturan/daftar_monev/'.$bagian);
+            }
+        }
     }
 }

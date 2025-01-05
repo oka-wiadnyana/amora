@@ -17,6 +17,7 @@
                     </div>
                   
                     <input type="hidden" name="id" value="<?= ($data_ref_monev) ? $data_ref_monev['id'] : ""; ?>">
+                    <input type="hidden" name="bagian" value="<?= $bagian; ?>">
                    
                     <button type="submit" class="btn btn-primary submit-button">Submit</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

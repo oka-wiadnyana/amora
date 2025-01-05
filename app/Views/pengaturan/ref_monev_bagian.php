@@ -34,7 +34,7 @@
             <?php foreach ($data_bagian as $d) : ?>
               <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $d['jenis_moenv']; ?></td>
+                <td><?= $d['jenis_monev']; ?></td>
 
                 <td><a href="" data-id="<?= $d['id']; ?>" class="btn btn-info btn-ubah">Ubah</a> <a href="" data-id="<?= $d['id']; ?>" class="btn btn-danger btn-hapus">Hapus</a></td>
               </tr>
@@ -114,14 +114,14 @@
           console.log(id);
           $.ajax({
             type: "post",
-            url: "<?= base_url('pengaturan/modal_akun'); ?>",
+            url: "<?= base_url('pengaturan/modal_ref_monev/'.$bagian); ?>/"+id,
             data: {
               id
             },
             dataType: "json",
             success: function(response) {
               $('#modal').html(response);
-              $('#modal_akun').modal('show');
+              $('#modal_ref_monev').modal('show');
             }
           });
         })
