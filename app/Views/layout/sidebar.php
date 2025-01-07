@@ -323,12 +323,12 @@
 
 
         <li class="nav-item nav-category">Dokumen Lainnya</li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" href="<?= base_url('putusanpidana/daftar_dokumen'); ?>">
                 <span class="icon-bg mdi mdi-file-check text-success h5"></span></span>
                 <span class="menu-title">Putusan Pidana</span>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('suratkeputusan/daftar_surat_keputusan'); ?>">
                 <span class="icon-bg"><i class="mdi mdi-file-document-box menu-icon"></i></span>
