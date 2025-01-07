@@ -18,10 +18,8 @@ class CreateMonevAplikasiTable extends Migration
             'nama_aplikasi' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => 555,
-                'unsigned'       => true,
-
+                'null' => true
             ],
-
             'penjelasan' => [
                 'type' => 'TEXT',
 
