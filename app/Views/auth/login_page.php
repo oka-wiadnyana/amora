@@ -29,9 +29,9 @@
         <div class="row flex-grow">
           <div class="col-lg-4 mx-auto">
             <div class="row mb-2">
-              <div class="col text-center">
+              <!-- <div class="col text-center">
                 <img src="<?= base_url('img/logo negara.png'); ?>" alt="" class="img-fluid" width="100rem">
-              </div>
+              </div> -->
             </div>
             <div class="auth-form-light text-left p-5">
               <div class="brand-logo  text-center">
