@@ -45,7 +45,7 @@ class Aplikasi extends BaseController
 
 
 
-        $datatables->only(['nama_aplikasi', 'tanggal_sk', 'file', 'penjelasan', 'latar_belakang', 'dampak_langsung', 'link']);
+        $datatables->only(['nama_aplikasi', 'file', 'penjelasan', 'latar_belakang', 'dampak_langsung', 'link']);
         $datatables->addSequenceNumber();
         $datatables->generate(); // done
     }

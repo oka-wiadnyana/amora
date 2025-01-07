@@ -7,7 +7,7 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item nav-category">Eksekusi</li>
+        <!-- <li class="nav-item nav-category">Eksekusi</li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#eks_putusan" aria-expanded="false" aria-controls="eks_putusan">
                 <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
@@ -35,7 +35,7 @@
 
                 </ul>
             </div>
-        </li>
+        </li> -->
         <!-- <li class="nav-item nav-category">Monev SIPP</li>
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('mis'); ?>">
@@ -68,7 +68,7 @@
             </div> -->
             <a class="nav-link" data-toggle="collapse" href="#apmlocal" aria-expanded="false" aria-controls="apmlocal">
                 <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
-                <span class="menu-title">APM</span>
+                <span class="menu-title">AMPUH</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="apmlocal">

@@ -5,7 +5,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <div class="col-md-3 d-flex justify-content-center">
                         <div class="rounded-circle border border-success d-flex flex-column align-items-center justify-content-center" style="height: 10rem; width: 10rem">
                             <span class="h6 font-weight-bold">EIS bulan ini</span>
@@ -42,24 +42,24 @@
                     <h4 class="my-auto card-title"> Data Eksekusi</h4>
 
 
-                </div>
+                </div> -->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-6">
 
 
-                        <!-- <h4 class="card-title">Bar chart</h4> -->
+                       
                         <canvas id="eksekusiPutusan"></canvas>
 
 
                     </div>
                     <div class="col-md-6">
 
-                        <!-- <h4 class="card-title">Bar chart</h4> -->
+                       
                         <canvas id="eksekusiHt"></canvas>
 
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row mt-3">
                     <h2>Hawasbid</h2>
