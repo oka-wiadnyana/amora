@@ -10,18 +10,18 @@ class Akreditasi extends BaseController
 {
     public function __construct()
     {
-        $data_gc = db_connect()->table('google_client')->get()->getRowArray();
+        // $data_gc = db_connect()->table('google_client')->get()->getRowArray();
 
-        $this->data_redirect_uri = db_connect()->table('redirect_uri_akreditasi');
+        // $this->data_redirect_uri = db_connect()->table('redirect_uri_akreditasi');
 
-        $this->validation = Services::validation();
-        $this->client = Services::curlrequest();
-        $this->googleClient = new \Google\Client();
-        $this->googleClient->setClientId($data_gc['client_id']);
-        $this->googleClient->setClientSecret($data_gc['client_secret']);
-        $this->googleClient->addScope("https://www.googleapis.com/auth/drive");
-        $this->parentFolderId = db_connect()->table('parent_folder_akreditasi');
-        $this->service = new \Google\Service\Drive($this->googleClient);
+        // $this->validation = Services::validation();
+        // $this->client = Services::curlrequest();
+        // $this->googleClient = new \Google\Client();
+        // $this->googleClient->setClientId($data_gc['client_id']);
+        // $this->googleClient->setClientSecret($data_gc['client_secret']);
+        // $this->googleClient->addScope("https://www.googleapis.com/auth/drive");
+        // $this->parentFolderId = db_connect()->table('parent_folder_akreditasi');
+        // $this->service = new \Google\Service\Drive($this->googleClient);
     }
 
     public function index($area = null)
