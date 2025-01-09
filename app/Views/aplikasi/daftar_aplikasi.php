@@ -17,46 +17,26 @@
   </div>
 
 
-  <div class="table-responsive bg-white p-2 rounded-3 shadow">
-
-    <table class="table table-bordered" id='table-aplikasi'>
-      <thead>
-        <tr>
-          <th class="text-center ">
-            No
-          </th>
-          <th class="text-center ">
-            Nama Aplikasi
-          </th>
-
-          <th class="text-center ">
-            File Manual
-          </th>
-          <th class="text-center ">
-            Penjelasan
-          </th>
-          <th class="text-center ">
-            Latar Belakang
-          </th>
-          <th class="text-center ">
-            Dampak langsung
-          </th>
-
-          <th class="text-center ">
-            Link
-          </th>
-
-          <th class="text-center ">
-            Aksi
-          </th>
-        </tr>
-
-      </thead>
-      <tbody>
-
-      </tbody>
+  <div class="table-responsive bg-white p-2 rounded-3 shadow" style="overflow: auto;">
+    <table class="table table-bordered" id="table-aplikasi" style="table-layout: auto; width: 100%;">
+        <thead>
+            <tr>
+                <th class="text-center">No</th>
+                <th class="text-center">Nama Aplikasi</th>
+                <th class="text-center">File Manual</th>
+                <th class="text-center text-wrap" >Penjelasan</th>
+                <th class="text-center text-wrap" >Latar Belakang</th>
+                <th class="text-center">Dampak Langsung</th>
+                <th class="text-center">Link</th>
+                <th class="text-center">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Isi tabel -->
+        </tbody>
     </table>
-  </div>
+</div>
+
 
 
 
@@ -72,6 +52,8 @@
         "processing": true,
         "serverSide": true,
         "order": [],
+        "autoWidth": false,
+        
         "ajax": {
           "url": `<?= base_url('aplikasi/data_aplikasi_datatable'); ?>`,
           "type": "POST"
@@ -100,6 +82,12 @@
             targets: -1,
 
           },
+          {
+            targets: [3, 4,5], // Index kolom untuk Penjelasan & Latar Belakang
+            render: function (data, type, row) {
+                return `<div style="white-space: normal;">${data}</div>`;
+            },
+        },
 
 
         ],

@@ -36,6 +36,11 @@ class CreateAplikasiTable extends Migration
 
                 'null' => true
             ],
+            'file' => [
+                'type' => 'TEXT',
+                
+                'null' => true
+            ],
             'link' => [
                 'type' => 'VARCHAR',
                 'constraint' => 550,
