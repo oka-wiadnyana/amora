@@ -134,7 +134,7 @@
                 dataType: "json",
                 success: function(response) {
 
-                  $(location).attr('href', `<?= base_url('akreditasilocal/daftar_assesment_internal'); ?>`);
+                  $(location).attr('href', `<?= base_url('akreditasilocal/daftar_assesment_eksternal'); ?>`);
                 }
               });
             }
