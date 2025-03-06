@@ -16,27 +16,46 @@ class CreateMonevZiTable extends Migration
                 'auto_increment' => true,
             ],
 
-            'nama_mou' => [
+            'bulan' => [
                 'type' => 'VARCHAR',
-                'constraint' => 500,
+                'constraint' => 50,
+                'null' => true
+            ],
+            'tahun' => [
+                'type' => 'VARCHAR',
+                'constraint' => 50,
+                'null' => true
+            ],
+            'tanggal_dokumen' => [
+                'type' => 'DATE',
+                
                 'null' => true
             ],
           
             'file' => [
                 'type' => 'VARCHAR',
-                'constraint' => 500,
+                'constraint' => 250,
                 'null' => true
             ],
-          
+            'area_zi' => [
+                'type' => 'VARCHAR',
+                'constraint' => 50,
+                'null' => true
+            ],
+            'jenis_dokumen' => [
+                'type' => 'VARCHAR',
+                'constraint' => 50,
+                'null' => true
+            ],
 
 
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('mous');
+        $this->forge->createTable('monev_zi');
     }
 
     public function down()
     {
-        $this->forge->dropTable('mous');
+        $this->forge->dropTable('monev_zi');
     }
 }
