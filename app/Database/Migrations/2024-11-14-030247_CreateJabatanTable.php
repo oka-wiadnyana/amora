@@ -30,7 +30,7 @@ class CreateJabatanTable extends Migration
 
 
         ]);
-        $this->forge->addKey('id', true);
+        $this->forge->addKey('id_jabatan', true);
         $this->forge->createTable('jabatan');
     }
 
