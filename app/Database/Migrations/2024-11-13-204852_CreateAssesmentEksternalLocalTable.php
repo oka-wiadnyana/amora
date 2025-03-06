@@ -38,11 +38,11 @@ class CreateAssesmentEksternalLocalTable extends Migration
 
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('assesment_eksternal_local');
+        $this->forge->createTable('assement_eksternal_local');
     }
 
     public function down()
     {
-        $this->forge->dropTable('assesment_eksternal_local');
+        $this->forge->dropTable('assement_eksternal_local');
     }
 }
