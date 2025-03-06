@@ -501,7 +501,7 @@ class Akreditasilocal extends BaseController
     public function modal_upload_internal()
     {
         $id = $this->request->getVar('id');
-        $data_internal = db_connect()->table('assesment_internal')->where('id', $id)->get()->getRowArray();
+        $data_internal = db_connect()->table('assesment_internal_local')->where('id', $id)->get()->getRowArray();
         return $this->response->setJSON([view('akreditasilocal/modal_upload_internal', ['data' => $data_internal])]);
     }
 
