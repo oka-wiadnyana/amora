@@ -25,7 +25,7 @@ class CreateAkunTable extends Migration
 
 
             ],
-            'username' => [
+            'password' => [
                 'type' => 'VARCHAR',
                 'constraint' => 500,
 
