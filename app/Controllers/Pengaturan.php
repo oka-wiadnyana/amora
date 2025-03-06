@@ -500,7 +500,7 @@ class Pengaturan extends BaseController
 
     public function hakim()
     {
-        $daftar_hakim = db_connect('sipp')->table('hakim_pn a')->join('amora.jabatan b', 'a.id=b.jabatan_hakim_id', 'left')->where('aktif', 'Y')->get()->getResultArray();
+        $daftar_hakim = db_connect('sipp')->table('hakim_pn a')->join(env('AMORA_TABLE').'.jabatan b', 'a.id=b.jabatan_hakim_id', 'left')->where('aktif', 'Y')->get()->getResultArray();
         // dd($daftar_hakim);
         return view('pengaturan/daftar_hakim', ['data' => $daftar_hakim]);
     }
