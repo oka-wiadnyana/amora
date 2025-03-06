@@ -39,11 +39,11 @@ class CreateAssesmentInternalLocalTable extends Migration
 
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('assement_internal_local');
+        $this->forge->createTable('assesment_internal_local');
     }
 
     public function down()
     {
-        $this->forge->dropTable('assement_internal_local');
+        $this->forge->dropTable('assesment_internal_local');
     }
 }
