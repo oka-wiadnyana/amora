@@ -19,6 +19,12 @@ class CreateAkunTable extends Migration
                 'type' => 'INTEGER',
 
             ],
+            'nama' => [
+                'type' => 'VARCHAR',
+                'constraint' => 500,
+
+
+            ],
             'username' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
