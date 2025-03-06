@@ -15,7 +15,7 @@ class CreateSubSubAreaTable extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'kode_sub_area' => [
+            'kode_sub_sub_area' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
                 'null' => true
