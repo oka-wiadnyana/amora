@@ -48,12 +48,14 @@ database.default.DBPrefix =
 database.default.port = 3306
 
 database.sipp.hostname = localhost
-database.sipp.database = sipp_d
+database.sipp.database = sipp
 database.sipp.username = root
 database.sipp.password = 
 database.sipp.DBDriver = MySQLi
 database.sipp.DBPrefix =
 database.sipp.port = 3306
+
+AMORA_TABLE=amora
 
 #--------------------------------------------------------------------
 # CONTENT SECURITY POLICY

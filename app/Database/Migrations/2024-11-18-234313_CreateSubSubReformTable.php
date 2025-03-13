@@ -15,7 +15,7 @@ class CreateSubSubReformTable extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'kode_sub_sub_reform' => [
+            'nomor_apm' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
                 'null' => true
